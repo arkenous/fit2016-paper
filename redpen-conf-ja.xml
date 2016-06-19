@@ -5,7 +5,7 @@
         </validator>
         <validator name="CommaNumber" /> <!-- 読点の数が多すぎないかを見る -->
         <validator name="WordNumber"> <!-- 一文の単語数が多すぎないかを見る -->
-          <property name="max_num" value="50"/>
+          <property name="max_num" value="60"/>
         </validator>
         <validator name="InvalidSymbol"/> <!-- 記号の種類をチェック -->
         <validator name="KatakanaEndHyphen"/> <!-- カタカナ語の後ろの長音チェック -->
