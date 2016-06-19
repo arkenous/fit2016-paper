@@ -25,4 +25,6 @@ script:
   - redpen -c redpen-conf-ja.xml -f latex relevant.tex
   - platex -halt-on-error -interaction=nonstopmode -file-line-error -no-shell-escape document.tex
   - dvipdfmx document.dvi
+  - platex -halt-on-error -interaction=nonstopmode -file-line-error -no-shell-escape document.tex
+  - dvipdfmx document.dvi
 
