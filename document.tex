@@ -1,0 +1,155 @@
+%
+% LaTeX2e template for FIT2010
+%
+
+%本テンプレートは *非公式* のものです.
+%ご自身の責任においてご利用下さい.
+
+\documentclass[a4j,twocolumn]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,enumerate}
+%\usepackage[dvips]{graphicx}
+
+
+\makeatletter
+% \sectionと\subsection部分のフォントサイズを10.5ポイントに設定します
+% 参考URL http://www.h4.dion.ne.jp/~latexcat/intro/i7-r2.html
+\def\section{\@startsection{section}{1}{\z@}%
+   {0.6\Cvs}%
+   {0.3\Cvs}%
+   {\reset@font\fontsize{10.5pt}{0pt}\bfseries}}
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+   {\Cdp}%
+   {\Cdp}%
+   {\reset@font\fontsize{10.5pt}{0pt}\bfseries}}
+% 章番号の後にピリオドを入れます.
+% 参考URL http://oku.edu.mie-u.ac.jp/~okumura/texfaq/qa/34044.html
+\def\@seccntformat#1{\csname the#1\endcsname.}
+\def\thefootnote{\fnsymbol{footnote}}
+\makeatother
+
+
+\def\baselinestretch{0.83}
+
+% 各種マージンの設定
+% 参考URL http://www.nsknet.or.jp/~tony/TeX/faq/layout.htm
+\setlength{\oddsidemargin}{20mm}
+\setlength{\evensidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}% デフォルトのマージンを引きます.
+\addtolength{\evensidemargin}{-1in}% デフォルトのマージンを引きます.
+\setlength{\textwidth}{170mm}% 210-20-20
+\setlength{\topmargin}{30mm}
+\addtolength{\topmargin}{-1in}% デフォルトのマージンを引きます.
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\textheight}{242mm}% 297-30(top)-25(bottom)
+\setlength{\columnsep}{7mm}
+
+
+
+
+
+% local settings
+\usepackage{color}
+\definecolor{purple}{rgb}{0.6,0,0.4}
+\definecolor{brown}{cmyk}{0,0.81,1,0.60}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\usepackage{listings,jlisting}
+\renewcommand{\lstlistingname}{ソースコード}
+\renewcommand{\slash}{/}
+\lstdefinestyle{MyJava} % JavaとXML，2つの言語を使いたかったので．style=MyJavaとかで使い分け
+{
+language=Java, % lstlisting内の言語の指定
+numbers=left, % 行番号を左端に表示する
+breaklines = true, % 行が長くなってしまった場合の改行を行う
+basicstyle={\small}, % 標準の書式設定
+identifierstyle={\small}, % 識別子のスタイル
+keywordstyle={\small\bfseries\color{purple}}, % キーワードのスタイル
+commentstyle={\small\itshape\color{gray}}, % コメントのスタイル
+stringstyle={\small\ttfamily\color{brown}}, % 文字列のスタイル
+frame=single, % 枠のスタイル
+tabsize=2, % タブ幅
+showstringspaces=false, % 空白を可視化するか
+}
+\lstdefinelanguage{XML} % XMLはあまり充実してないってさー
+{
+    morestring=[b]",
+    morestring=[s]{>}{<},
+    morecomment=[s]{<?}{?>},
+    stringstyle=\color{brown},
+    identifierstyle=\color{darkblue},
+    keywordstyle=\color{cyan},
+    morekeywords={xmlns,version,type}% list your attributes here
+}
+\lstdefinestyle{MyXML} % JavaとXM（ry
+{
+language=XML,
+numbers=left,
+breaklines=true,
+basicstyle={\small},
+identifierstyle={\small\color{darkblue}},
+keywordstyle={\small\bfseries\color{cyan}},
+commentstyle={\small\itshape\color{gray}},
+stringstyle={\small\ttfamily\color{brown}},
+frame=single,
+tabsize=2,
+showstringspaces=false,
+}
+\usepackage{ascmac}
+\usepackage{otf}
+% end of local settings
+
+
+
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\twocolumn[%
+\begin{center}
+ {\Large スマートフォンのモーションセンサを利用した個人認証アプリケーションの開発}\vspace{.5ex}
+
+ {\Large\sffamily Development of Personal Authentication Application Using the Motion Sensor of a Smartphone}\vspace{1ex}
+
+
+\large
+\mbox{}
+\hfil
+\setcounter{footnote}{2}
+{\bfseries \UTF{9AD9}坂賢佑}${}^\thefootnote$
+\hfil
+\setcounter{footnote}{2}
+{\bfseries 平松耕輔}${}^\thefootnote$
+\hfil
+\setcounter{footnote}{3}
+{\bfseries 小林孝史}${}^\thefootnote$
+\hfil
+\mbox{}
+
+\mbox{}
+\hfil
+{\sffamily Kensuke Kosaka}
+\hfil
+{\sffamily Kosuke Hiramatsu}
+\hfil
+{\sffamily Takashi Kobayashi}
+\hfil
+\mbox{}
+\hfil
+
+\end{center}
+]
+
+\setcounter{footnote}{2}
+\footnotetext{関西大学大学院総合情報学研究科}
+\setcounter{footnote}{3}
+\footnotetext{関西大学総合情報学部}
+
+\section{サンプル}
+サンプル
+
+\bibliographystyle{plain}
+
+\end{document}
