@@ -11,9 +11,6 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y texlive-lang-cjk oracle-java8-installer
   - sudo mkdir /usr/share/texlive/texmf-dist/tex/latex/mylatex/
-  - pwd
-  - ls
-  - ls ./stylefiles/
   - sudo mv ./stylefiles/* /usr/share/texlive/texmf-dist/tex/latex/mylatex/
   - sudo mktexlsr
 
