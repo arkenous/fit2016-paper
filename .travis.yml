@@ -1,0 +1,23 @@
+language: python
+
+sudo: required
+dist: trusty
+
+python:
+  - "3.5"
+
+before_install:
+  - sudo sed -i 's/us-central1.gce/us-central1.gce.clouds/' /etc/apt/sources.list
+  - sudo apt-get -qq update
+  - sudo apt-get install -y texlive-lang-cjk oracle-java8-installer
+
+before_script:
+  - wget https://github.com/redpen-cc/redpen/releases/download/redpen-1.6.1/redpen-1.6.1.tar.gz -O /tmp/redpen.tar.gz
+  - mkdir redpen
+  - tar -xvf /tmp/redpen.tar.gz -C redpen --strip-components 1
+  - export PATH=$PATH:$PWD/redpen/bin/
+
+script:
+  - redpen -c redpen-conf-ja.xml -f latex intro.tex
+  - platex -halt-on-error -interaction=nonstopmode -file-line-error -no-shell-escape document.tex
+  - dvipdfmx document.dvi
