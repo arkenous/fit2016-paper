@@ -10,6 +10,9 @@ before_install:
   - sudo sed -i 's/us-central1.gce/us-central1.gce.clouds/' /etc/apt/sources.list
   - sudo apt-get -qq update
   - sudo apt-get install -y texlive-lang-cjk oracle-java8-installer
+  - sudo mkdir /usr/share/texlive/texmf-dist/tex/latex/mylatex/
+  - sudo mv stylefiles/* /usr/share/texlive/texmf-dist/tex/latex/mylatex/
+  - sudo mktexlsr
 
 before_script:
   - wget https://github.com/redpen-cc/redpen/releases/download/redpen-1.6.1/redpen-1.6.1.tar.gz -O /tmp/redpen.tar.gz
