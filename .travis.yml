@@ -23,6 +23,8 @@ before_script:
 script:
   - redpen -c redpen-conf-ja.xml -f latex intro.tex
   - redpen -c redpen-conf-ja.xml -f latex relevant.tex
+  - redpen -c redpen-conf-ja.xml -f latex system.tex
+  - redpen -c redpen-conf-ja.xml -f latex exp.tex
   - platex -halt-on-error -interaction=nonstopmode -file-line-error -no-shell-escape document.tex
   - dvipdfmx document.dvi
   - platex -halt-on-error -interaction=nonstopmode -file-line-error -no-shell-escape document.tex
